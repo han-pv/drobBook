@@ -15,12 +15,18 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             'business',
-            'education'
+            'education',
+            'science',
+            'history',
+            'biography',
+            'fantasy',
         ];
 
         foreach ($categories as $category) {
-            Category::create(['name' => $category]);
-        }
+            Category::create(['name' => $category
         
+        
+        ]);
+        }
     }
 }
