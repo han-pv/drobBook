@@ -14,19 +14,18 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            'business',
-            'education',
-            'science',
-            'history',
-            'biography',
-            'fantasy',
+            'Business',
+            'Education',
+            'Science',
+            'History',
+            'Biography',
+            'Fantasy',
         ];
 
         foreach ($categories as $category) {
-            Category::create(['name' => $category
-        
-        
-        ]);
+            Category::create([
+                'name' => $category
+            ]);
         }
     }
 }

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->float('price');
             $table->boolean('is_discount')->default(false);
-            $table->integer('discount_percent');
+            $table->integer('discount_percent')->default(0);
             $table->string('image')->nullable();
             $table->string('barcode')->nullable();
             $table->boolean('is_new')->default(false);
