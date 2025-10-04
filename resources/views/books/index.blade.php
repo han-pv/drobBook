@@ -11,7 +11,6 @@
                 ">
             </span>
             <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-            <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
             <script>
                 const selectTyped = document.querySelector('.typed');
                 if (selectTyped) {
@@ -32,9 +31,9 @@
         <div class="h3 fw-bold text-primary mt-5">
             Books
         </div>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-3">
-                <form action="{{ route('books.index') }}" method="get">
+                <form action="{{ route('books.index') }}" method="get" class="me-3">
                     <label for="category" class="form-label mt-3">Category: </label><br>
                     <select class="form-select" name="categoryId" id="category">
                         @foreach ($categories as $category)
@@ -92,9 +91,5 @@
                 </div>
             </div>
         </div>
-
-
-
-
     </div>
 @endsection
