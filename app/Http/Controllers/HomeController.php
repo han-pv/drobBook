@@ -2,30 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\Author;
 use App\Models\Category;
+use App\Models\Language;
+use App\Models\Publisher;
+use App\Models\Year;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home()
-    {
-        // $categories = [
-        //     'bilim',
-        //     'taryh',
-        //     'fantastika',
-        //     'dokumental',
-        // ];
-        
-        $categories = Category::get();
+    public function index()
+    {        
+        $categories = Category::withCount('books')
+        ->get();
 
-        $authors = [
-            'Kerim G',
-            'Gurbannazar E',
-        ];
+        $books = Book::inRandomOrder()->first();
 
-        return view('home')->with([
+        // dd($categories);
+
+        return view('home.index')->with([
             'categories' => $categories,
-            'authors' => $authors,
+            'books' => $books,
         ]);
     }
 }
