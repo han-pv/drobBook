@@ -17,13 +17,10 @@ class HomeController extends Controller
         $categories = Category::withCount('books')
         ->get();
 
-        $books = Book::inRandomOrder()->first();
-
         // dd($categories);
 
         return view('home.index')->with([
             'categories' => $categories,
-            'books' => $books,
         ]);
     }
 }

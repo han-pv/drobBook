@@ -9,10 +9,11 @@
             @foreach ($categories as $category)
                 <div class="col">
                     <div class="card p-2">
-                        <div class="h4">{{ $category->name }}
+                        <div class="h4">
+                            <a href="{{ route('books.index', ['categoryId' => $category->id]) }}">{{ $category->name }}</a>
                             <span class="btn btn-outline-primary small">{{ $category->books_count }}</span>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             @endforeach
